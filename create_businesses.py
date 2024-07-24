@@ -356,7 +356,7 @@ unique_names = {
     "Content Creators": ["MythBusters", "Veritasium", "VSauce"]
 }
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://hopterlink.up.railway.app"
 BUSINESSES_PER_SUBCATEGORY = 3
 
 
