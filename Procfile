@@ -1,1 +1,1 @@
-release: chmod +x deploy.sh && ./deploy.sh
+web: chmod +x deploy.sh && ./deploy.sh
