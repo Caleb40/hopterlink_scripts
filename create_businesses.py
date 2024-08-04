@@ -22,82 +22,102 @@ categories = [
     {
         "name": "Home Services",
         "description": "Various home services including plumbing, electrical, and more.",
+        "icon": "Home",
     },
     {
         "name": "Automotive Services",
         "description": "Automotive services including car repair, car wash, and more.",
+        "icon": "Car",
     },
     {
         "name": "Health and Wellness",
         "description": "Health and wellness services including personal trainers, nutritionists, and more.",
+        "icon": "HeartPulse",
     },
     {
         "name": "Beauty and Personal Care",
         "description": "Beauty and personal care services including hair stylists, makeup artists, and more.",
+        "icon": "View",
     },
     {
         "name": "Education and Tutoring",
         "description": "Education and tutoring services including academic tutors, language instructors, and more.",
+        "icon": "GraduationCap",
     },
     {
         "name": "Event Services",
         "description": "Event services including event planners, caterers, and more.",
+        "icon": "PartyPopper",
     },
     {
         "name": "Business Services",
         "description": "Business services including accountants, bookkeepers, and more.",
+        "icon": "Handshake",
     },
     {
         "name": "Home Improvement and Renovation",
         "description": "Home improvement and renovation services including general contractors, interior designers, and more.",
+        "icon": "PaintRoller",
     },
     {
         "name": "Real Estate Services",
         "description": "Real estate services including real estate agents, property managers, and more.",
+        "icon": "Caravan",
     },
     {
         "name": "Technology and Gadgets",
         "description": "Technology and gadgets services including computer repair, smartphone repair, and more.",
+        "icon": "Cpu",
     },
     {
         "name": "Transportation and Moving",
         "description": "Transportation and moving services including movers, delivery services, and more.",
+        "icon": "Truck"
     },
     {
         "name": "Pet Services",
         "description": "Pet services including pet grooming, pet sitting, and more.",
+        "icon": "Dog",
     },
     {
         "name": "Fitness and Recreation",
         "description": "Fitness and recreation services including yoga instructors, pilates instructors, and more.",
+        "icon": "Dumbbell",
     },
     {
         "name": "Crafts and DIY",
         "description": "Crafts and DIY services including tailors, furniture makers, and more.",
+        "icon": "Brush",
     },
     {
         "name": "Writing and Content Creation",
         "description": "Writing and content creation services including freelance writers, copywriters, and more.",
+        "icon": "PenTool",
     },
     {
         "name": "Consulting and Coaching",
         "description": "Consulting and coaching services including business consultants, life coaches, and more.",
+        "icon": "Lightbulb",
     },
     {
         "name": "Financial Services",
         "description": "Financial services including tax preparers, financial planners, and more.",
+        "icon": "Landmark",
     },
     {
         "name": "Childcare and Education",
         "description": "Childcare and education services including nannies, babysitters, and more.",
+        "icon": "Baby",
     },
     {
         "name": "Specialty Services",
         "description": "Specialty services including personal assistants, concierge services, and more.",
+        "icon": "Gem",
     },
     {
         "name": "Creative Services",
         "description": "Creative services including graphic designers, illustrators, and more.",
+        "icon": "Palette",
     },
 ]
 
@@ -224,11 +244,7 @@ subcategories = {
         "Career Coaches",
         "Health Coaches",
     ],
-    "Financial Services": [
-        "Tax Preparers",
-        "Financial Planners",
-        "Insurance Brokers"
-    ],
+    "Financial Services": ["Tax Preparers", "Financial Planners", "Insurance Brokers"],
     "Childcare and Education": [
         "Nannies",
         "Babysitters",
@@ -259,7 +275,11 @@ unique_names = {
     "Cleaning Services": ["SparkleClean", "PristineCleaners", "FreshStart Cleaning"],
     "Pest Control": ["BugBusters", "PestFree Solutions", "CritterControl"],
     "Car Repair": ["AutoFix Garage", "ProMechanics", "RepairMasters"],
-    "Car Wash and Detailing": ["ShineAuto", "DetailPro Services", "CleanRide Detailing"],
+    "Car Wash and Detailing": [
+        "ShineAuto",
+        "DetailPro Services",
+        "CleanRide Detailing",
+    ],
     "Towing Services": ["TowMasters", "RescueTowing", "FastTow Solutions"],
     "Tire Services": ["TirePros", "QuickTire", "TreadMasters"],
     "Auto Body Repair": ["BodyFixers", "ProAutoBody", "EliteCollision"],
@@ -269,7 +289,11 @@ unique_names = {
     "Physical Therapists": ["RehabMasters", "PhysioCare", "MoveWell Therapy"],
     "Massage Therapists": ["RelaxRestore", "BodyHarmony", "WellnessTouch"],
     "Chiropractors": ["SpineCare", "ChiroHealth", "AlignWell Chiropractic"],
-    "Mental Health Counselors": ["MindCare", "WellnessCounseling", "ThriveMental Health"],
+    "Mental Health Counselors": [
+        "MindCare",
+        "WellnessCounseling",
+        "ThriveMental Health",
+    ],
     "Acupuncturists": ["AcupunctureBalance", "NeedleHealing", "Acupoint Wellness"],
     "Hair Stylists": ["GlamourCuts Salon", "StyleStudio", "ChicHair Boutique"],
     "Makeup Artists": ["GlamGoddess Makeup", "RadiantBeauty Artistry", "FlawlessFaces"],
@@ -353,7 +377,7 @@ unique_names = {
     "Graphic Designers": ["DesignGurus", "VisualMasters", "CreativeDesigns"],
     "Illustrators": ["ArtMasters", "IllustrationPros", "CreativeSketches"],
     "Videographers": ["FilmMasters", "VideoPros", "VisualStory"],
-    "Content Creators": ["MythBusters", "Veritasium", "VSauce"]
+    "Content Creators": ["MythBusters", "Veritasium", "VSauce"],
 }
 
 BASE_URL = "https://hopterlink.up.railway.app"
@@ -388,25 +412,28 @@ def create_user_and_authenticate():
     last_name = fake.last_name()
     phone = fake.nigeria_phone_number()
 
-    response = requests.post(url=url, data={
-        "email": email,
-        "password1": password1,
-        "password2": password2,
-        "first_name": first_name,
-        "last_name": last_name,
-        "phone": phone
-    })
+    response = requests.post(
+        url=url,
+        data={
+            "email": email,
+            "password1": password1,
+            "password2": password2,
+            "first_name": first_name,
+            "last_name": last_name,
+            "phone": phone,
+        },
+    )
 
     if response.status_code != 201:
         print("Error while creating user:", response.text)
         return None
 
-    user = response.json()['user']
+    user = response.json()["user"]
 
-    login = requests.post(f"{BASE_URL}/auth/login/", data={
-        "email": user.get("email"),
-        "password": password1
-    })
+    login = requests.post(
+        f"{BASE_URL}/auth/login/",
+        data={"email": user.get("email"), "password": password1},
+    )
 
     if login.status_code != 200:
         print("Error while logging in:", login.text)
@@ -415,11 +442,11 @@ def create_user_and_authenticate():
     return login.cookies
 
 
-def create_category(name, description, admin_cookies):
+def create_category(name, description, icon, admin_cookies):
     print(f"Creating category: {name}")
     response = requests.post(
         f"{BASE_URL}/api/categories/",
-        json={"name": name, "description": description},
+        json={"name": name, "description": description, "icon": icon},
         cookies=admin_cookies,
     )
     if response.status_code == 201:
@@ -444,22 +471,25 @@ def create_subcategory(category_id, name, admin_cookies):
 
 
 def create_business(
-        cookies,
-        email,
-        business_name,
-        location,
-        description,
-        website,
-        business_phone_1,
-        min_delivery_time_in_days,
-        max_delivery_time_in_days,
-        industry,
-        industry_subcategory,
-        images_folder="images_compressed/",
+    cookies,
+    email,
+    business_name,
+    location,
+    description,
+    website,
+    business_phone_1,
+    min_delivery_time_in_days,
+    max_delivery_time_in_days,
+    industry,
+    industry_subcategory,
+    images_folder="images_compressed/",
 ):
     print(f"Creating business: {business_name}")
     image_files = random.sample(os.listdir(images_folder), random.randint(2, 5))
-    files = [("uploaded_images", open(os.path.join(images_folder, img), 'rb')) for img in image_files]
+    files = [
+        ("uploaded_images", open(os.path.join(images_folder, img), "rb"))
+        for img in image_files
+    ]
     response = requests.post(
         f"{BASE_URL}/api/businesses/",
         files=files,
@@ -492,16 +522,22 @@ def main():
         return
 
     total_businesses = sum(
-        len(subcategories[category["name"]]) * BUSINESSES_PER_SUBCATEGORY for category in categories)
+        len(subcategories[category["name"]]) * BUSINESSES_PER_SUBCATEGORY
+        for category in categories
+    )
     businesses_created = 0
     start_time = time.time()
 
     for category in categories:
         category_name = category["name"]
-        category_id = create_category(category_name, category["description"], admin_cookies)
+        category_id = create_category(
+            category_name, category["description"], category["icon"], admin_cookies
+        )
         if category_id:
             for subcategory in subcategories.get(category_name, []):
-                subcategory_json = create_subcategory(category_id, subcategory, admin_cookies)
+                subcategory_json = create_subcategory(
+                    category_id, subcategory, admin_cookies
+                )
                 if subcategory_json["id"]:
                     for _ in range(BUSINESSES_PER_SUBCATEGORY):
                         user_cookies = create_user_and_authenticate()
@@ -509,7 +545,9 @@ def main():
                             print("Failed to create user and authenticate.")
                             return
                         email = fake.email()
-                        business_name = random.choices(unique_names.get(subcategory_json["name"], [fake.company()]))[0]
+                        business_name = random.choices(
+                            unique_names.get(subcategory_json["name"], [fake.company()])
+                        )[0]
                         location = fake.address()
                         description = fake.catch_phrase()
                         website = fake.url()
@@ -534,12 +572,18 @@ def main():
                         business_end_time = time.time()
                         businesses_created += 1
                         elapsed_time = business_end_time - business_start_time
-                        avg_time_per_business = (business_end_time - start_time) / businesses_created
+                        avg_time_per_business = (
+                            business_end_time - start_time
+                        ) / businesses_created
                         businesses_left = total_businesses - businesses_created
                         eta = avg_time_per_business * businesses_left
 
-                        print(f"Business {business_name} creation time: {format_eta(elapsed_time)}")
-                        print(f"Average time per business: {format_eta(avg_time_per_business)}")
+                        print(
+                            f"Business {business_name} creation time: {format_eta(elapsed_time)}"
+                        )
+                        print(
+                            f"Average time per business: {format_eta(avg_time_per_business)}"
+                        )
                         print(f"Businesses left: {businesses_left}")
                         print(f"Estimated time to complete: {format_eta(eta)}")
 
