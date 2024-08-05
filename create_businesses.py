@@ -72,7 +72,7 @@ categories = [
     {
         "name": "Transportation and Moving",
         "description": "Transportation and moving services including movers, delivery services, and more.",
-        "icon": "Truck"
+        "icon": "Truck",
     },
     {
         "name": "Pet Services",
@@ -121,7 +121,7 @@ categories = [
     },
 ]
 
-# SubcCategories Data
+# SubCategories Data
 subcategories = {
     "Home Services": [
         "Plumbing",
@@ -380,7 +380,7 @@ unique_names = {
     "Content Creators": ["MythBusters", "Veritasium", "VSauce"],
 }
 
-BASE_URL = "https://hopterlink.up.railway.app"
+BASE_URL = "http://127.0.0.1:8000"
 BUSINESSES_PER_SUBCATEGORY = 3
 
 
